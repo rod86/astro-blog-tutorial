@@ -15,7 +15,7 @@ export const GET: APIRoute = async ({ url }): Promise<Response> => {
         });
     }
 
-    const allBlogArticles: CollectionEntry<'blog'> = await getCollection('blog');
+    const allBlogArticles: CollectionEntry<'blog'>[] = await getCollection('blog');
     const searchResults = allBlogArticles.filter(article => {
         const titleMatch: boolean = article.data.title
             .toLowerCase()
